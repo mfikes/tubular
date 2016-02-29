@@ -1,14 +1,19 @@
-# tubular
+# Tubular
 
-A Clojure library designed to ... well, that part is up to you.
+A Clojure Socket REPL client.
 
 ## Usage
 
-FIXME
+Start a plain Clojure REPL and then
+
+```clojure
+(require 'tubular.core)
+(tubular.core/connect 9999)
+```
 
 ## License
 
-Copyright © 2016 FIXME
+Copyright © 2016 Mike Fikes
 
 Distributed under the Eclipse Public License either version 1.0 or (at
 your option) any later version.
