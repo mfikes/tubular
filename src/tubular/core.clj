@@ -15,7 +15,7 @@
   (while @running
     (let [line (read-line)]
       (write-line socket line)
-      (when (= line ":cljs/quit")
+      (when (= line ":rep/quit")
         (reset! running false)))))
 
 (defn connect
