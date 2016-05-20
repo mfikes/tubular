@@ -15,7 +15,7 @@
   (while @running
     (let [line (read-line)]
       (write-line socket line)
-      (when (= line ":rep/quit")
+      (when (= line ":repl/quit")
         (reset! running false)))))
 
 (defn connect
