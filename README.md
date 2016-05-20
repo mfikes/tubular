@@ -2,7 +2,7 @@
 
 A Clojure Socket REPL client.
 
-[![Clojars Project](http://clojars.org/tubular/latest-version.svg)](http://clojars.org/tubular)
+[![Clojars Project](https://img.shields.io/clojars/v/tubular.svg)](https://clojars.org/tubular)
 
 ## Usage
 
