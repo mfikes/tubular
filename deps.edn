@@ -1,0 +1,5 @@
+{
+ :deps {
+        clj-sockets {:mvn/version "0.1.0"}
+        }
+ }
