@@ -11,7 +11,7 @@ First, have a remote Socket REPL server listening for connections.
 For example, you could start one with Clojure via:
 
 ```
-java -Dclojure.server.repl="{:port 5555 :accept clojure.core.server/repl}" -cp clojure-1.8.0.jar clojure.main
+clj -J-Dclojure.server.repl="{:port 5555 :accept clojure.core.server/repl}"
 ```
 
 Then to create a client, start a plain Clojure REPL with Tubular on the classpath.
@@ -41,7 +41,7 @@ When you are done and want to disconnect and return to your local plain Clojure 
 
 ## License
 
-Copyright © 2016 Mike Fikes
+Copyright © 2016–2018 Mike Fikes
 
 Distributed under the Eclipse Public License either version 1.0 or (at
 your option) any later version.
