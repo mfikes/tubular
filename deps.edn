@@ -1,1 +1,2 @@
-{:deps {org.clojure/tools.cli {:mvn/version "0.3.7"}}}
+{:paths ["src"]
+ :deps {org.clojure/tools.cli {:mvn/version "0.3.7"}}}
