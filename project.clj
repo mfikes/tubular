@@ -1,4 +1,4 @@
-(defproject tubular "1.2.0"
+(defproject tubular "1.3.0"
   :description "Clojure Socket REPL client"
   :url "https://github.com/mfikes/tubular"
   :license {:name "Eclipse Public License"
