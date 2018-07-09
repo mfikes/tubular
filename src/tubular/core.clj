@@ -1,5 +1,6 @@
 (ns tubular.core
-  (:require [clj-sockets.core :refer [create-socket write-line read-char]]))
+  (:require [clojure.tools.cli :refer [parse-opts]]
+            [clj-sockets.core :refer [create-socket write-line read-char]]))
 
 (defn- run-reader
   [socket running]
@@ -26,3 +27,18 @@
          running (atom true)]
      (.start (Thread. #(run-reader socket running)))
      (run-writer socket running))))
+
+(def cli-options
+  [["-H" "--host HOST" "Address to bind"
+    :default "localhost"]
+   ["-p" "--port PORT" "Port number"
+    :default 5555
+    :parse-fn #(Integer/parseInt %)
+    :validate [#(< 0 % 0x10000) "Must be a number between 0 and 65536"]]
+   ["-h" "--help"]])
+
+(defn -main [& args]
+  (let [{:keys [options] :as parsed} (parse-opts args cli-options)]
+    (if (:help options)
+      (println (:summary parsed))
+      (connect (:host options) (:port options)))))
