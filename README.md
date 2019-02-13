@@ -52,7 +52,7 @@ clj -m tubular.core -p 5555
 First ensure Tubular is set up as a dependency. Then when creating a Cursive REPL, don't pick either of the nREPL options. Instead choose: “Use clojure.main in normal JVM process”. In the Parameters field, specify 
 
 ```
--m tubular.core 5555
+-m tubular.core -p 5555
 ```
 
 #### Plain Clojure REPL
