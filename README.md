@@ -76,7 +76,7 @@ When you are done and want to disconnect and return to your local plain Clojure 
 
 ## License
 
-Copyright © 2016–2018 Mike Fikes and Contributors
+Copyright © 2016–2019 Mike Fikes and Contributors
 
 Distributed under the Eclipse Public License either version 1.0 or (at
 your option) any later version.
