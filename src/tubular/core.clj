@@ -14,10 +14,11 @@
 (defn- run-writer
   [socket running]
   (while @running
-    (let [line (read-line)]
-      (write-line socket line)
-      (when (= line ":repl/quit")
-        (reset! running false)))))
+    (if-let [line (read-line)]
+      (do (write-line socket line)
+          (when (= line ":repl/quit")
+            (reset! running false)))
+      (reset! running false))))
 
 (defn connect
   ([port]
@@ -25,7 +26,9 @@
   ([hostname port]
    (let [socket (create-socket hostname port)
          running (atom true)]
-     (.start (Thread. #(run-reader socket running)))
+     (doto (Thread. #(run-reader socket running))
+       (.setDaemon true)
+       (.start))
      (run-writer socket running))))
 
 (def cli-options
